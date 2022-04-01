@@ -1,6 +1,7 @@
 /* Variables de color y fuentes */
 :root {
  --primario: #9C27B0;
+ --primarioOscuro:#811a93;
  --secundario: #FFCE00;
  --blanco: #ffffff;
  --negro: #000;
@@ -68,7 +69,7 @@ h3 {
 
 /* Navegación */
 .navegacion {
-   background-color: var(--primario);
+   background-color: var(--primarioOscuro);
    padding: 1rem 0;
    display: flex;
    justify-content: center;
@@ -100,12 +101,26 @@ h3 {
 /* Grid o reticula */
 .grid {
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
    column-gap: 2rem;
    row-gap: 2rem;
 }
 
-@media (min-width: 768px) {
+/* Valor para visualizar en Smartphones */
+@media (max-width: 767px) {
+   .grid {
+      grid-template-columns: repeat(1, 1fr);
+   }
+}
+
+/* Valor para visualizar en Tablets */
+@media (min-width: 768px) and (max-width:1023px) {
+   .grid {
+       grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+/* Valor para visualizar en PC y Superior */
+@media (min-width:1024px) {
    .grid {
        grid-template-columns: repeat(3, 1fr);
    }
@@ -114,7 +129,11 @@ h3 {
 /* Productos */
 .producto {
    background-color: var(--primarioOscuro);
-   padding: 1rem;
+   padding: 1.2rem;
+}
+
+.producto__imagen {
+   width: 100%;
 }
 
 .producto__nombre {
