@@ -210,7 +210,7 @@ h3 {
    margin: 0;
 }
 
-/* Producto */
+/* Camisa */
 @media (min-width:768px) {
    .camisa {
       display: grid;
@@ -219,19 +219,70 @@ h3 {
    }
 }
 
+.camisa__info {
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   gap: 1rem;
+   text-align: center;
+ }
+
+@media (min-width: 768px) {
+   .camisa__info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1rem;
+      text-align: center;
+   }
+ }
+
+.camisa__info--titulos {
+   background-color: var(--primarioOscuro);
+   font-family: var(--fuentePrincipal);
+   font-size: 2rem;
+   font-weight: bold;
+   padding: 0.6rem;
+   margin: 0;
+   color: var(--secundario);
+}
+
+.camisa__info--precio {
+   font-size: 4rem;
+   color: var(--blanco);
+   font-family: var(--fuentePrincipal);
+   margin: 0;
+   padding: 0;
+}
+
+.camisa__infopedido {
+   font-size: 1.5rem;
+   padding: 0;
+   text-align: justify;
+   font-style: italic;
+   line-height: 1.2;
+   color: var(--secundario);
+}
+
+/* Formulario */
 .formulario {
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 2rem;
+   grid-template-columns: repeat(1, 1fr);
+   gap: 1rem;
+}
+
+@media (min-width: 768px) {
+   .formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+   }
 }
 
 .formulario__campo {
-   border: 1rem solid var(--primarioOscuro);
-   background-color: transparent;
-   color: var(--blanco);
-   font-size: 2rem;
+   border: 0.6rem solid var(--primarioOscuro);
+   color: var(--negro);
+   font-size: 1.5rem;
    font-family: Arial, Helvetica, sans-serif;
-   padding: 1rem;
+   padding: 0.5rem;
    appearance: none;
 }
 
@@ -242,10 +293,56 @@ h3 {
    font-family: var(--fuentePrincipal);
    padding: 2rem;
    transition: background-color .3s ease;
-   grid-column: 1 / 3;
+}
+
+@media (min-width: 768px) {
+   .formulario__submit {
+      grid-column: 1 / 3;
+   }
 }
 
 .formulario__submit:hover {
    cursor: pointer;
    background-color: var(--secundarioOscuro);
+}
+
+/* Contacto */
+.contacto__columnas {
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   gap: 1rem;
+}
+
+@media (min-width: 768px) {
+   .contacto__columnas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+   }
+}
+
+.contacto label {
+   font-family: var(--fuentePrincipal);
+   color: var(--secundario);
+   font-size: 2.5rem;
+   padding: 1rem 0;
+   display:inline-block
+}
+
+.contacto input, textarea {
+   width: 100%;
+   padding:1rem;
+   border: 1rem solid var(--primarioOscuro);
+}
+
+/* Mensaje de agradecimiento */
+span {
+   border: 1rem solid var(--primarioOscuro);
+   text-align: center;
+   color: var(--secundario);
+   font-size: 2.5rem;
+   margin: 2rem 0;
+   padding: 2rem 3rem;
+   display: block;
+   font-family: var(--fuentePrincipal);
 }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Estilos y fuentes de google -->
+   <link rel="stylesheet" href="../css/estilos.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+   <title>PP-Playeras Perronas</title>
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+      <a href="index.html">
+         <img src="../img/logo.png" alt="Logotipo de Tienda" class="header__logo">
+      </a>
+   </header>
+   <!-- Fin del header -->
+
+   <!-- Navegación -->
+   <nav class="navegacion">
+      <a class="navegacion__enlace" href="index.html">Tienda</a>
+      <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html">Nosotros</a>
+      <a class="navegacion__enlace" href="contacto.html">Contáctanos</a>
+   </nav>
+   <!-- Fin de la navegación -->
+
+   <!-- Contenido principal -->
+   <main class="contenedor">
+      <h1>Playera</h1>
+      
+      <!-- Sección camisa -->
+      <div class="camisa">
+         <img src="../img/3.jpg" alt="imagen de producto">
+         <div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos voluptatem labore pariatur non possimus fuga ea ad beatae ducimus odit cupiditate in, incidunt nulla repudiandae iure officia corrupti laborum distinctio alias expedita maiores quos. Placeat assumenda fugiat esse pariatur dolores commodi dolor quis, iure beatae facilis rerum doloribus ea reiciendis quam minima, officia autem nisi excepturi labore similique in nam voluptas... </p>
+
+            <div class="camisa__info">
+               <div>
+                  <p class="camisa__info--titulos">Precio</p>
+                  <p class="camisa__info--precio">$20.30</p>
+               </div>
+               <div>
+                  <p class="camisa__info--titulos">Existencias</p>
+                  <p class="camisa__info--precio">12</p>
+               </div>
+            </div>
+
+            <p class="camisa__infopedido">Para enviar un pedido selecciona la talla, el número de playeras y tu dirección de correo electrónico. En breve un miembro de nuestro equipo se pondrá en contacto contigo.</p>
+
+            <form class="formulario">
+               <select class="formulario__campo">
+                  <option disabled selected> - Selecciona una talla - </option>
+                  <option>Chica</option>
+                  <option>Mediana</option>
+                  <option>Grande</option>
+               </select>
+               <input class="formulario__campo" type="number" placeholder="Cantidad" min="1" required>
+               <input class="formulario__campo" type="email" placeholder="Ingresa tu dirección de email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" title="Ingresa un correo válido" required>
+               <textarea class="formulario__campo" placeholder="Ingresa tu comentario (opcional)"></textarea>
+               <input class="formulario__submit" type="submit" value="Enviar pedido">
+            </form>
+
+         </div>
+         
+      </div>
+      <!-- Sección camisa -->
+         
+    </main>
+   <!-- Fin del contenido principal -->
+
+   <!-- Footer -->
+   <footer class="footer">
+      <p class="footer__texto">Front Store - Todos los derechos reservados - 2022 - Julio César Martínez</p>
+   </footer>
+   <!-- Fin del footer -->
+
+</body>
+</html>
