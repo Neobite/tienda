@@ -11,9 +11,8 @@
       <div class="grid">
          
          <?php
-         // Bloque para ejecutar la consulta y capturar posibles errores.
             try {
-               $sql = "SELECT imagen, nombre, precio FROM playera";
+               $sql = "SELECT * FROM playera";
                $resultado = $conexion->query($sql);
 
             } catch (Exception $e) {
@@ -22,11 +21,9 @@
          ?>
 
          <!-- Inicio del While -->
-         <?php  
-           while ($playera = $resultado->fetch_assoc()) {
-         ?>
+         <?php while ($playera = $resultado->FETCH_ASSOC()) { ?>         
          <div class="producto">
-            <a href="#">
+         <a href="producto.php?id=<?php echo $playera['id_playera']; ?>">
                <img src="img/<?php echo $playera['imagen']; ?>" alt="<?php echo $playera['nombre']; ?>">
                <div>
                   <p class="producto__nombre"><?php echo $playera['nombre']; ?></p>
@@ -34,20 +31,19 @@
                </div>
              </a>
          </div>
-         <?php }
-         //Cerrar la conexión a la base de datos, es una buena práctica.
-         mysqli_close($conexion);
-         ?>
+         <?php } ?>
          <!-- Fin del While -->
-
+ 
       </div>
 
    </main>
    <!-- Fin del contenido principal -->
-
    <?php
       include('includes/footer.php');
+      //Cerrar la conexión a la base de datos, es una buena práctica.
+      //mysqli_close($conexion);
    ?>
+
 
 </body>
 </html>
