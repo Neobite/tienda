@@ -89,7 +89,7 @@
 
 		} else {
 			//Mensaje enviado al usuario
-			echo '<h1 class="mensaje">Debe ingresar los siguientes datos</h1>';
+			echo '<h1 class="mensaje"> - Proporcione los siguientes datos - </h1>';
 			
 			foreach ($errores as $error) {
 				echo "<div class='error'>";
