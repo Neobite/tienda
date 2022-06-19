@@ -3,7 +3,7 @@
    define('HOST', 'localhost');
    define('USER', 'root');
    define('PASSWORD', 'moonspell');
-   define('BASE','tienda');
+   define('BASE','personal');
    
       $conexion = mysqli_connect(HOST, USER, PASSWORD, BASE);
       if (!$conexion) {

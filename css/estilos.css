@@ -335,6 +335,22 @@ h3 {
    border: 1rem solid var(--primarioOscuro);
 }
 
+/* Estilos para form de crear playeras */
+.contacto fieldset {
+   border: 2px dashed;
+   color: var(--blanco);
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+}
+
+.contacto legend {
+   font-family: var(--fuentePrincipal);
+   color: var(--secundario);
+   font-size: 3rem;
+   padding: 1rem 0;
+
+}
+
 /* Mensaje de agradecimiento */
 span {
    border: 1rem solid var(--primarioOscuro);
