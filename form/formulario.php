@@ -7,6 +7,7 @@
 	$nombre = '';
 	$apaterno = '';
 	$amaterno = '';
+	$descripcion = '';
 	$edad = '';
 	$fnacimiento = '';
 	$sexo = '';
@@ -24,6 +25,7 @@
 		$nombre = $_POST['nombre'];
 		$apaterno = $_POST['apaterno'];
 		$amaterno = $_POST['amaterno'];
+		$descripcion = $_POST['descripcion'];
 		$edad = $_POST['edad'];
 		$fnacimiento = $_POST['fnacimiento'];
 		$sexo = $_POST['sexo'];
@@ -31,6 +33,7 @@
 		$telefono = $_POST['telefono'];
 		$redes = $_POST['redes'];
 		$ssocial = $_POST['ssocial'];
+		$creado = date('Y/m/d');
 
 		if (!$nombre) {
 			$errores[] = "Nombre del trabajador";
@@ -42,6 +45,10 @@
 
 		if (!$amaterno) {
 			$errores[] = "Apellido materno del trabajador";
+		}
+
+		if (strlen($descripcion) < 50) {
+			$errores[] = "La descripción debe tener al menos 50 caracteres";
 		}
 
 		if (!$edad) {
@@ -80,7 +87,7 @@
 		//Verificar que el arreglo de errores este vacio, antes de guardar información en la base de datos
 		if(empty($errores)) {
 				//Insertar valores del formulario en la base de datos.
-				$query = "INSERT INTO trabajadores (nombre, apaterno, amaterno, edad, fnacimiento, sexo, curp, telefono, redes, ssocial) VALUES('$nombre', '$apaterno', '$amaterno', '$edad', '$fnacimiento', '$sexo', '$curp', '$telefono', '$redes', '$ssocial')";
+				$query = "INSERT INTO trabajadores (nombre, apaterno, amaterno, descripcion, edad, fnacimiento, sexo, curp, telefono, redes, ssocial, creado) VALUES('$nombre', '$apaterno', '$amaterno', '$descripcion', '$edad', '$fnacimiento', '$sexo', '$curp', '$telefono', '$redes', '$ssocial', '$creado')";
 
 				$resultado = mysqli_query($conexion, $query);
 				
@@ -124,6 +131,9 @@
 	
 				<label for="amaterno">Apellido materno</label>
 				<input type="text" name="amaterno"placeholder="Apellido materno" value="<?php echo $amaterno;?>">
+
+				<label for="descripcion">Descripción</label>
+				<textarea name="descripcion" cols="60" rows="10"><?php echo $descripcion;?></textarea>
 	
 				<label for="edad">Edad</label>
 				<input type="number" name="edad" placeholder="Edad" value="<?php echo $edad;?>">
