@@ -77,18 +77,19 @@
 		// echo "</pre>";
 		// exit;
 
-		//Verificar que el arreglo de errores este vacio, antes de insertar los datos en la Base de Datos
+		//Verificar que el arreglo de errores este vacio, antes de guardar información en la base de datos
 		if(empty($errores)) {
 				//Insertar valores del formulario en la base de datos.
 				$query = "INSERT INTO trabajadores (nombre, apaterno, amaterno, edad, fnacimiento, sexo, curp, telefono, redes, ssocial) VALUES('$nombre', '$apaterno', '$amaterno', '$edad', '$fnacimiento', '$sexo', '$curp', '$telefono', '$redes', '$ssocial')";
 
 				$resultado = mysqli_query($conexion, $query);
 				
-				//Mensaje enviado al usuario
-				echo '<h1 class="mensaje">Registro creado correctamente</h1>';
+				//Mensaje enviado al usuario si el resgistro ha sido guardado en la base de datos
+				echo '<h1 class="mensaje"> - Registro creado correctamente - </h1>';
 
 		} else {
-			//Mensaje enviado al usuario
+			
+			//Mensaje enviado al usuario si hay errores en el formulario.
 			echo '<h1 class="mensaje"> - Proporcione los siguientes datos - </h1>';
 			
 			foreach ($errores as $error) {
@@ -128,7 +129,7 @@
 				<input type="number" name="edad" placeholder="Edad" value="<?php echo $edad;?>">
 	
 				<label for="fnacimiento">Fecha de nacimiento</label>
-				<input type="date" name="fnacimiento"placeholder="Fecha de nacimiento" value="<?php echo $fnacimiento;?>">
+				<input type="date" name="fnacimiento" value="<?php echo $fnacimiento;?>">
 	
 				<label for="sexo">Sexo</label>
 				<select name="sexo">
